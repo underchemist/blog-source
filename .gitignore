@@ -59,3 +59,4 @@ target/
 # misc
 *.sublime-project
 *.sublime-workspace
+output/.gitignore
