@@ -4,7 +4,8 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Yann-Sebastien'
 SITENAME = 'ysebastien.xyz'
-SITEURL = ''
+SITESUBTITLE = '"Even a turtle falls on its back without the help of a friend"'
+SITEURL = 'http://ysebastien.xyz'
 
 PATH = 'content'
 
@@ -26,10 +27,29 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+# SOCIAL = (('twitter', 'https://twitter.com/underchemist'),)
 
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
+
+# Customization
+
+THEME = '../pelican-themes/clean-blog'
+HEADER_COVER = 'images/header.jpg'
+DISPLAY_PAGES_ON_MENU = True
+COLOR_SCHEME_CSS = 'github.css'
+
+DEFAULT_METADATA = {
+    'authors': 'Yann-Sebastien',
+    'status': 'draft',
+}
+
+GITHUB_URL = 'https://github.com/underchemist'
+TWITTER_URL = 'https://twitter.com/underchemist'
+FACEBOOK_URL = 'https://www.facebook.com/ysebastien'
+
+DELETE_OUTPUT_DIRECTORY = False
+
+STATIC_PATHS = ['images']

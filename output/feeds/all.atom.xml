@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ysebastien.xyz</title><link href="http://ysebastien.xyz/" rel="alternate"></link><link href="http://ysebastien.xyz/feeds/all.atom.xml" rel="self"></link><id>http://ysebastien.xyz/</id><updated>2015-12-28T14:33:00-08:00</updated><entry><title>Nanonispy: My fist python package</title><link href="http://ysebastien.xyz/nanonispy-my-first-python-package.html" rel="alternate"></link><updated>2015-12-28T14:33:00-08:00</updated><author><name>Yann-Sebastien</name></author><id>tag:ysebastien.xyz,2015-12-28:nanonispy-my-first-python-package.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="https://travis-ci.org/underchemist/nanonispy"&gt;&lt;img alt="Build Status" src="https://travis-ci.org/underchemist/nanonispy.svg?branch=master" /&gt;&lt;/a&gt;  &lt;a class="reference external" href="https://coveralls.io/github/underchemist/nanonispy?branch=master"&gt;&lt;img alt="Coverage Status" src="https://coveralls.io/repos/underchemist/nanonispy/badge.svg?branch=master&amp;amp;service=github" /&gt;&lt;/a&gt;  &lt;a class="reference external" href="https://anaconda.org/underchemist/nanonispy/badges/installer/conda.svg"&gt;&lt;object data="https://anaconda.org/underchemist/nanonispy/badges/installer/conda.svg" type="image/svg+xml"&gt;Install with conda&lt;/object&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;First of all this will be only of use to those that use an STM with a Nanonis hardware/software. Also since this is a python package, you should probably be using python for data analysis.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;nanonispy&lt;/code&gt; is a small library written in python 3. It came about by needing to do some quasiparticle interference (QPI) analysis on STM grids. Nanonis saves the data in binary files, which need to be unpacked into &lt;code&gt;numpy&lt;/code&gt; arrays for further processing. I had written a version of this that was a bit more hardcoded with the analysis code so I decided to try and refactor this into a more general library, and get some experience making a nice clean python library. I don't know if I've achieved that but that's why you practice. The code is unit tested, with ~ 100% coverage although I don't know that the tests are all that good. However it does mean that should you need to change things for your needs, it should be relatively easy to troubleshoot if errors do come up.&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;div class="section" id="things-it-can-do"&gt;
+&lt;h2&gt;Things it can do&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Read Nanonis generated grid, scan, or point spectroscopy files ('.3ds', '.sxm', and '.dat' files, respectively).&lt;/li&gt;
+&lt;li&gt;Parse the header for each file and store each entry into a dict for easy retrieval during post-processing.&lt;/li&gt;
+&lt;li&gt;Read the binary data in, appropriately shaped, for each channel into &lt;code&gt;numpy&lt;/code&gt; arrays.&lt;/li&gt;
+&lt;li&gt;Since each channel is just a numpy array, you're able to save each in a '.npy' binary format for easy figure generation after some post-processing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="things-it-cannot-do"&gt;
+&lt;h2&gt;Things it cannot do&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Handle incomplete or non-square datasets.&lt;/li&gt;
+&lt;li&gt;Apply image correction techniques like flattening.&lt;/li&gt;
+&lt;li&gt;Handle memory management. If you need to process a lot of grid data (200-300+ MB a pop), keep in mind that you may fill up your RAM quite quickly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="things-it-should-be-able-to-do-in-time"&gt;
+&lt;h2&gt;Things it should be able to do (in time)&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Have basic image flattening utility fuctions.&lt;/li&gt;
+&lt;li&gt;Have unified header dictionaries between grid and scan files. The formats Nanonis saves grid and scan information in is quite different and up until now I have been to lazy to try to normalize it a bit.&lt;/li&gt;
+&lt;li&gt;More gracefully handle incomplete/non-square data.&lt;/li&gt;
+&lt;li&gt;Have docs? just to describe things in a minimal way.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="installation"&gt;
+&lt;h2&gt;Installation&lt;/h2&gt;
+&lt;p&gt;In the continued theme of I don't know what I'm doing, I uploaded &lt;code&gt;nanonispy&lt;/code&gt; to &lt;a class="reference external" href="https://pypi.python.org/pypi/nanonispy/1.0.1"&gt;pypi&lt;/a&gt;, &lt;a class="reference external" href="https://anaconda.org/underchemist/nanonispy"&gt;conda&lt;/a&gt;, and of course &lt;a class="reference external" href="https://github.com/underchemist/nanonispy"&gt;github&lt;/a&gt;. So there several, I think all fairly easy ways of installing the program. The easiest, or at least in the sense of not presuming much of anything of your development environment, is with setup.py:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git clone git@github.com:underchemist/nanonispy.git
+&lt;span class="nv"&gt;$ &lt;/span&gt;python setup.py install
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;However most people will have one of pip or conda installed (if not both). This makes it even simpler and all that is required to download the source code and install it is:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install nanonispy
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;or&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;conda install -c https://conda.anaconda.org/underchemist nanonispy
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and you're good to go!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="usage"&gt;
+&lt;h2&gt;Usage&lt;/h2&gt;
+&lt;p&gt;I tend to explore my data a bit in an ipython/jupyter console, which is sort of how I developed the code. However it's just as easy to start scripting away since the library is pretty small and only requires you to do one thing: Initialize!&lt;/p&gt;
+&lt;p&gt;A typical script using for &lt;code&gt;nanonispy&lt;/code&gt; might start out like:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;nanonispy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;nap&lt;/span&gt;  &lt;span class="c"&gt;# what I found convenient, up to you&lt;/span&gt;
+
+&lt;span class="n"&gt;fname&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;/path/to/my/big/important/stm/data.3ds&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;grid&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;nap&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Grid&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fname&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;fname2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;/path/to/my/less/important/stm/scan.sxm&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;scan&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;nap&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Scan&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fname2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;fname3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;path/to/spectroscopy/data.dat&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;spec&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;nap&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Spec&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fname3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now you have 3 class objects initialized with all their data and header information avaible as class attributes! Analyze away.&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;Friedel oscillations on Ag(111)... yummy!&lt;/p&gt;
+&lt;img alt="sailing the Fermi seas" class="align-center" src="/images/friedel-ag111.png" style="width: 100%;" /&gt;
+&lt;/div&gt;
+</summary><category term="python"></category></entry></feed>
