@@ -40,6 +40,7 @@ THEME = '../pelican-themes/clean-blog'
 HEADER_COVER = 'images/header.jpg'
 DISPLAY_PAGES_ON_MENU = True
 COLOR_SCHEME_CSS = 'github.css'
+MENUITEMS = [('cv', '/cv/ysebastien-cv.pdf')]
 
 DEFAULT_METADATA = {
     'authors': 'Yann-Sebastien',
@@ -49,7 +50,8 @@ DEFAULT_METADATA = {
 GITHUB_URL = 'https://github.com/underchemist'
 TWITTER_URL = 'https://twitter.com/underchemist'
 FACEBOOK_URL = 'https://www.facebook.com/ysebastien'
+DISQUS_SITENAME = 'ysebastien.xyz'
 
 DELETE_OUTPUT_DIRECTORY = False
 
-STATIC_PATHS = ['images']
+STATIC_PATHS = ['images', 'cv']
