@@ -3,9 +3,9 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'Yann-Sebastien'
-SITENAME = 'ysebastien.xyz'
+SITENAME = 'ysebastien.me'
 SITESUBTITLE = '"Even a turtle falls on its back without the help of a friend"'
-SITEURL = 'http://ysebastien.xyz'
+SITEURL = 'http://ysebastien.me'
 
 PATH = 'content'
 
@@ -40,7 +40,8 @@ THEME = '../pelican-themes/clean-blog'
 HEADER_COVER = 'images/header.jpg'
 DISPLAY_PAGES_ON_MENU = True
 COLOR_SCHEME_CSS = 'github.css'
-MENUITEMS = [('cv', '/cv/ysebastien-cv.pdf')]
+# MENUITEMS = [('cv', '/cv/ysebastien-cv.pdf')]
+MENUITEMS = []
 
 DEFAULT_METADATA = {
     'authors': 'Yann-Sebastien',
@@ -50,7 +51,6 @@ DEFAULT_METADATA = {
 GITHUB_URL = 'https://github.com/underchemist'
 TWITTER_URL = 'https://twitter.com/underchemist'
 FACEBOOK_URL = 'https://www.facebook.com/ysebastien'
-DISQUS_SITENAME = 'ysebastien.xyz'
 
 DELETE_OUTPUT_DIRECTORY = False
 
