@@ -8,19 +8,19 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>ysebastien.xyz</title>
+        <title>ysebastien.me</title>
 
-            <link href="http://ysebastien.xyz/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ysebastien.xyz Full Atom Feed" />
-            <link href="http://ysebastien.xyz/feeds/articles.atom.xml" type="application/atom+xml" rel="alternate" title="ysebastien.xyz Categories Atom Feed" />
+            <link href="http://ysebastien.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ysebastien.me Full Atom Feed" />
+            <link href="http://ysebastien.me/feeds/articles.atom.xml" type="application/atom+xml" rel="alternate" title="ysebastien.me Categories Atom Feed" />
 
         <!-- Bootstrap Core CSS -->
-        <link href="http://ysebastien.xyz/theme/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://ysebastien.me/theme/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="http://ysebastien.xyz/theme/css/clean-blog.min.css" rel="stylesheet">
+        <link href="http://ysebastien.me/theme/css/clean-blog.min.css" rel="stylesheet">
 
         <!-- Code highlight color scheme -->
-            <link href="http://ysebastien.xyz/theme/css/code_blocks/github.css" rel="stylesheet">
+            <link href="http://ysebastien.me/theme/css/code_blocks/github.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -41,14 +41,14 @@
 
 
 			<meta property="og:locale" content="en">
-		<meta property="og:site_name" content="ysebastien.xyz">
+		<meta property="og:site_name" content="ysebastien.me">
 
 	<meta property="og:type" content="article">
 	<meta property="article:author" content="">
-	<meta property="og:url" content="http://ysebastien.xyz/nanonispy-my-first-python-package.html">
+	<meta property="og:url" content="http://ysebastien.me/nanonispy-my-first-python-package.html">
 	<meta property="og:title" content="Nanonispy: My fist python package">
 	<meta property="og:description" content="">
-	<meta property="og:image" content="http://ysebastien.xyz/">
+	<meta property="og:image" content="http://ysebastien.me/">
 	<meta property="article:published_time" content="2015-12-28 14:33:00-08:00">
 </head>
 
@@ -65,15 +65,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://ysebastien.xyz/">ysebastien.xyz</a>
+                <a class="navbar-brand" href="http://ysebastien.me/">ysebastien.me</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/cv/ysebastien-cv.pdf">cv</a></li>
 
-                            <li><a href="http://ysebastien.xyz/pages/about-me.html">About me</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -82,14 +80,14 @@
     </nav>
 
     <!-- Page Header -->
-        <header class="intro-header" style="background-image: url('http://ysebastien.xyz/theme/images/post-bg.jpg')">
+        <header class="intro-header" style="background-image: url('http://ysebastien.me/theme/images/post-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
                         <h1>Nanonispy: My fist python package</h1>
                         <span class="meta">Posted by
-                                <a href="http://ysebastien.xyz/author/yann-sebastien.html">Yann-Sebastien</a>
+                                <a href="http://ysebastien.me/author/yann-sebastien.html">Yann-Sebastien</a>
                              on Mon 28 December 2015
                         </span>
                         
@@ -138,14 +136,14 @@
 <div class="section" id="installation">
 <h2>Installation</h2>
 <p>In the continued theme of I don't know what I'm doing, I uploaded <code>nanonispy</code> to <a class="reference external" href="https://pypi.python.org/pypi/nanonispy/1.0.1">pypi</a>, <a class="reference external" href="https://anaconda.org/underchemist/nanonispy">conda</a>, and of course <a class="reference external" href="https://github.com/underchemist/nanonispy">github</a>. So there several, I think all fairly easy ways of installing the program. The easiest, or at least in the sense of not presuming much of anything of your development environment, is with setup.py:</p>
-<div class="highlight"><pre><span class="nv">$ </span>git clone git@github.com:underchemist/nanonispy.git
-<span class="nv">$ </span>python setup.py install
+<div class="highlight"><pre><span></span>$ git clone git@github.com:underchemist/nanonispy.git
+$ python setup.py install
 </pre></div>
 <p>However most people will have one of pip or conda installed (if not both). This makes it even simpler and all that is required to download the source code and install it is:</p>
-<div class="highlight"><pre><span class="nv">$ </span>pip install nanonispy
+<div class="highlight"><pre><span></span>$ pip install nanonispy
 </pre></div>
 <p>or</p>
-<div class="highlight"><pre><span class="nv">$ </span>conda install -c https://conda.anaconda.org/underchemist nanonispy
+<div class="highlight"><pre><span></span>$ conda install -c https://conda.anaconda.org/underchemist nanonispy
 </pre></div>
 <p>and you're good to go!</p>
 </div>
@@ -153,15 +151,15 @@
 <h2>Usage</h2>
 <p>I tend to explore my data a bit in an ipython/jupyter console, which is sort of how I developed the code. However it's just as easy to start scripting away since the library is pretty small and only requires you to do one thing: Initialize!</p>
 <p>A typical script using for <code>nanonispy</code> might start out like:</p>
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">nanonispy</span> <span class="kn">as</span> <span class="nn">nap</span>  <span class="c"># what I found convenient, up to you</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nanonispy</span> <span class="kn">as</span> <span class="nn">nap</span>  <span class="c1"># what I found convenient, up to you</span>
 
-<span class="n">fname</span> <span class="o">=</span> <span class="s">&#39;/path/to/my/big/important/stm/data.3ds&#39;</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;/path/to/my/big/important/stm/data.3ds&#39;</span>
 <span class="n">grid</span> <span class="o">=</span> <span class="n">nap</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">Grid</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
 
-<span class="n">fname2</span> <span class="o">=</span> <span class="s">&#39;/path/to/my/less/important/stm/scan.sxm&#39;</span>
+<span class="n">fname2</span> <span class="o">=</span> <span class="s1">&#39;/path/to/my/less/important/stm/scan.sxm&#39;</span>
 <span class="n">scan</span> <span class="o">=</span> <span class="n">nap</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">Scan</span><span class="p">(</span><span class="n">fname2</span><span class="p">)</span>
 
-<span class="n">fname3</span> <span class="o">=</span> <span class="s">&#39;/path/to/spectroscopy/data.dat&#39;</span>
+<span class="n">fname3</span> <span class="o">=</span> <span class="s1">&#39;/path/to/spectroscopy/data.dat&#39;</span>
 <span class="n">spec</span> <span class="o">=</span> <span class="n">nap</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">Spec</span><span class="p">(</span><span class="n">fname3</span><span class="p">)</span>
 </pre></div>
 <p>Now you have 3 class objects initialized with all their data and header information avaible as class attributes! Analyze away.</p>
@@ -174,21 +172,6 @@
 
     <hr>
 
-        <div class="comments">
-            <h2>Comments !</h2>
-            <div id="disqus_thread"></div>
-            <script type="text/javascript">
-                var disqus_shortname = 'ysebastien.xyz';
-                var disqus_identifier = 'nanonispy-my-first-python-package.html';
-                var disqus_url = 'http://ysebastien.xyz/nanonispy-my-first-python-package.html';
-                (function() {
-                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                    dsq.src = '//ysebastien.xyz.disqus.com/embed.js';
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the comments.</noscript>
-        </div>
             </div>
         </div>
     </div>
@@ -210,6 +193,14 @@
                             </a>
                         </li>
                         <li>
+                            <a href="https://www.facebook.com/ysebastien">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="https://github.com/underchemist">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
@@ -226,23 +217,14 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="http://ysebastien.xyz/theme/js/jquery.js"></script>
+    <script src="http://ysebastien.me/theme/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="http://ysebastien.xyz/theme/js/bootstrap.min.js"></script>
+    <script src="http://ysebastien.me/theme/js/bootstrap.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="http://ysebastien.xyz/theme/js/clean-blog.min.js"></script>
+    <script src="http://ysebastien.me/theme/js/clean-blog.min.js"></script>
 
-<script type="text/javascript">
-    var disqus_shortname = 'ysebastien.xyz';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>
 </body>
 
 </html>
