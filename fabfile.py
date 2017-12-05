@@ -89,5 +89,6 @@ def gh_pages():
 def github():
     preview()
     local('cd output/')
-    local('git commit -am "update"')
+    local('git add .')
+    local('git commit -m "update"')
     local('git push origin master')
