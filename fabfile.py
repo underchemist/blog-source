@@ -9,6 +9,8 @@ from pelican.server import ComplexHTTPRequestHandler
 
 # Local path configuration (can be absolute or relative to fabfile)
 env.deploy_path = 'output'
+env.username = 'underchemist'
+env.github_repository = 'underchemist.github.io'
 DEPLOY_PATH = env.deploy_path
 
 # Remote server configuration
@@ -82,13 +84,8 @@ def publish():
 
 def gh_pages():
     """Publish to GitHub Pages"""
-    rebuild()
-    local("ghp-import -b {github_pages_branch} {deploy_path}".format(**env))
-    local("git push origin {github_pages_branch}".format(**env))
-
-def github():
+    clean()
     preview()
-    local('cd output/')
-    local('git add .')
-    local('git commit -m "update"')
-    local('git push origin master')
+    local("ghp-import {deploy_path}".format(**env))
+    local("git push git@github.com:{username}/{github_repository} {github_pages_branch}:master".format(**env))
+

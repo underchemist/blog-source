@@ -50,7 +50,8 @@ DEFAULT_METADATA = {
 
 DELETE_OUTPUT_DIRECTORY = False
 
-STATIC_PATHS = ['images', 'cv', 'extra/favicon.ico']
+STATIC_PATHS = ['images', 'cv', 'extra/favicon.ico', 'extra/CNAME']
 EXTRA_PATH_METADATA = {
-    'extra/favicon.ico': {'path': 'favicon.ico'}
+    'extra/favicon.ico': {'path': 'favicon.ico'},
+    'extra/CNAME': {'path': 'CNAME'}
     }
