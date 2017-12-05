@@ -27,7 +27,8 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-# SOCIAL = (('twitter', 'https://twitter.com/underchemist'),)
+SOCIAL = (('twitter', 'https://twitter.com/underchemist'),
+          ('github', 'https://github.com/underchemist'))
 
 DEFAULT_PAGINATION = 10
 
@@ -40,18 +41,16 @@ THEME = '../pelican-themes/clean-blog'
 HEADER_COVER = 'images/header.jpg'
 DISPLAY_PAGES_ON_MENU = True
 COLOR_SCHEME_CSS = 'github.css'
-# MENUITEMS = [('cv', '/cv/ysebastien-cv.pdf')]
-MENUITEMS = []
+FAVICON = 'favicon.ico'
+# MENUITEMS = []
 
 DEFAULT_METADATA = {
     'authors': 'Yann-Sebastien',
-    'status': 'draft',
 }
-
-GITHUB_URL = 'https://github.com/underchemist'
-TWITTER_URL = 'https://twitter.com/underchemist'
-FACEBOOK_URL = 'https://www.facebook.com/ysebastien'
 
 DELETE_OUTPUT_DIRECTORY = False
 
-STATIC_PATHS = ['images', 'cv']
+STATIC_PATHS = ['images', 'cv', 'extra/favicon.ico']
+EXTRA_PATH_METADATA = {
+    'extra/favicon.ico': {'path': 'favicon.ico'}
+    }

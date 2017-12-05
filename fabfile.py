@@ -3,7 +3,7 @@ import fabric.contrib.project as project
 import os
 import shutil
 import sys
-import SocketServer
+import socketserver
 
 from pelican.server import ComplexHTTPRequestHandler
 
@@ -49,7 +49,7 @@ def serve():
     """Serve site at http://localhost:8000/"""
     os.chdir(env.deploy_path)
 
-    class AddressReuseTCPServer(SocketServer.TCPServer):
+    class AddressReuseTCPServer(socketserver.TCPServer):
         allow_reuse_address = True
 
     server = AddressReuseTCPServer(('', PORT), ComplexHTTPRequestHandler)
@@ -85,3 +85,9 @@ def gh_pages():
     rebuild()
     local("ghp-import -b {github_pages_branch} {deploy_path}".format(**env))
     local("git push origin {github_pages_branch}".format(**env))
+
+def github():
+    preview()
+    local('cd output/')
+    local('git commit -am "update"')
+    local('git push origin master')
