@@ -60,3 +60,4 @@ target/
 *.sublime-project
 *.sublime-workspace
 output/.gitignore
+*.sublime-project
