@@ -1,6 +1,5 @@
 Title: A sudoku solver in Flask
 Date: 2017-11-05
-Status: draft
 
 # The idea
 I've always wanted to learn how to use [Flask]('http://flask.pocoo.org/docs/0.12/') properly. I've never gotten through a flask tutorial that has an example app, so I decided to adapt a [sudoku solving library]('https://github.com/underchemist/sudopy') I made quite awhile ago. Although I tried being super smart when I wrote this and tried to implement a version of Donald Knuth's [dancing links]('https://en.wikipedia.org/wiki/Dancing_Links') I ended up only writing a backtracking algorithm. I figured this is still good enough to solve most inputs within a couple of seconds and that's fine for my purposes.
