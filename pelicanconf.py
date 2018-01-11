@@ -46,6 +46,7 @@ FAVICON = 'favicon.ico'
 
 DEFAULT_METADATA = {
     'authors': 'Yann-Sebastien',
+    'status': 'draft',
 }
 
 DELETE_OUTPUT_DIRECTORY = False
