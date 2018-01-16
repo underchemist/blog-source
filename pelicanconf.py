@@ -20,6 +20,9 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+# Typically direct templates are used to generate index pages for collections of content (e.g., tags and category index pages)
+DIRECT_TEMPLATES = ['index', 'archives', 'tags']
+
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
@@ -42,7 +45,7 @@ HEADER_COVER = 'images/header.jpg'
 DISPLAY_PAGES_ON_MENU = True
 COLOR_SCHEME_CSS = 'github.css'
 FAVICON = 'favicon.ico'
-# MENUITEMS = []
+MENUITEMS = [('tags', 'tags.html'), ('archives', 'archives.html')]
 
 DEFAULT_METADATA = {
     'authors': 'Yann-Sebastien',
