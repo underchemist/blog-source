@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <title>Using python and wget to download the entire comedy bang bang archive to-date</title>
+
+            <link href="http://ysebastien.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ysebastien.me Full Atom Feed" />
+            <link href="http://ysebastien.me/feeds/articles.atom.xml" type="application/atom+xml" rel="alternate" title="ysebastien.me Categories Atom Feed" />
+        <!-- Bootstrap Core CSS -->
+        <link href="http://ysebastien.me/theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="http://ysebastien.me/theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="http://ysebastien.me/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+        <meta name="description" content="Use a free Howl premium trial to find find the download links for all the comedy bang bang podcast episodes, wget to download them.">
+
+        <meta name="author" content="Yann-Sebastien">
+
+        <meta name="tags" content="python">
+        <meta name="tags" content="comedy">
+
+	                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="ysebastien.me">
+
+	<meta property="og:type" content="article">
+            <meta property="article:author" content="http://ysebastien.me/author/yann-sebastien.html">
+	<meta property="og:url" content="http://ysebastien.me/using-python-and-wget-to-download-the-entire-comedy-bang-bang-archive-to-date.html">
+	<meta property="og:title" content="Using python and wget to download the entire comedy bang bang archive to-date">
+	<meta property="article:published_time" content="2018-01-10 18:09:00-08:00">
+            <meta property="og:description" content="Use a free Howl premium trial to find find the download links for all the comedy bang bang podcast episodes, wget to download them.">
+
+            <meta property="og:image" content="http://ysebastien.me/images/header.jpg">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@underchemist">
+        <meta name="twitter:title" content="Using python and wget to download the entire comedy bang bang archive to-date">
+
+            <meta name="twitter:image" content="http://ysebastien.me/images/header.jpg">
+
+            <meta name="twitter:description" content="Use a free Howl premium trial to find find the download links for all the comedy bang bang podcast episodes, wget to download them.">
+    <link rel="icon" href="/favicon.ico">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://ysebastien.me/">ysebastien.me</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                        <li><a href="tags.html">tags</a></li>
+                        <li><a href="archives.html">archives</a></li>
+
+                            <li><a href="http://ysebastien.me/pages/about-me.html">About me</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+        <header class="intro-header" style="background-image: url('images/header.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Using python and wget to download the entire comedy bang bang archive to-date</h1>
+                        <span class="meta">Posted by
+                                <a href="http://ysebastien.me/author/yann-sebastien.html">Yann-Sebastien</a>
+                             on Wed 10 January 2018
+                        </span>
+                            <span class="meta">Updated on Wed 10 January 2018</span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <!-- Post Content -->
+    <article>
+        <p>I love <a href="http://www.earwolf.com/show/comedy-bang-bang/">Comedy Bang Bang!</a> so much, it's gotten me through some unhappy times.  Unfortunately all but
+the past 6 months or so of episodes are archived behind a paywall. Supporting Earwolf and the
+comedians that provide literally countless hours of free content is something I am in fact very
+much in support of. But one day there is the chance I want to revisit a very old episode but the
+hosting service has shutdown or just life has happened and there isn't a reliable way of accessing
+all the old archives anymore.</p>
+<p>So I did slightly unethical thing. I signed up for a free trial of howl premium (which I've had
+before) and went to the Howl archive url and did little digging with chrome dev tools. Initially I
+had assumed I would be able to right click the rendered episodes and find the mp3 url from there,
+but they had hid it away a little bit. From the source I was able to find the episode-table id
+whose elements contained a tags with a data-stream-url attribute. These data-stream-url links
+were to s3.aws servers and had the mp3 filename directly in the url! Some quick curl on a few
+different of these urls proved that they were indeed the podcast audio files.</p>
+<p>To quickly scrape all these urls I used <a href="https://pypi.python.org/pypi/beautifulsoup4">BeautifulSoup</a> on the source file I saved.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;Comedy Bang Bang_ The Podcast - Howl.html&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+<span class="n">links</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+     <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data-stream-url&#39;</span><span class="p">))</span>
+
+<span class="c1"># a also contains many None entries for all a tags without data-stream-url attribute</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+     <span class="k">if</span> <span class="n">i</span><span class="p">:</span>
+          <span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;cbb-archive-urls.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
+          <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>It turns out wget is quite feature rich and can be <a href="https://www.gnu.org/software/wget/manual/wget.html">configured quite a bit</a>. wget handles an input file of urls sequentially, with the additional arguments helping to make sure the queue can be resumed, doesn't abuse their hosting server too much, and doesn't eat up all my bandwidth.</p>
+<div class="highlight"><pre><span></span>wget --limit-rate<span class="o">=</span>1000k -c -t <span class="m">10</span> --wait <span class="m">12</span> --random-wait -i /mnt/c/Users/ysebastien/Downloads/cbb-archive-urls.txt
+</pre></div>
+    </article>
+
+        <div class="tags">
+            <p>tags: <a href="http://ysebastien.me/tag/python.html">python</a>, <a href="http://ysebastien.me/tag/comedy.html">comedy</a></p>
+        </div>
+
+    <hr>
+
+        <div class="comments">
+            <h2>Comments !</h2>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var disqus_shortname = 'ysebastien-me';
+                var disqus_identifier = 'using-python-and-wget-to-download-the-entire-comedy-bang-bang-archive-to-date.html';
+                var disqus_url = 'http://ysebastien.me/using-python-and-wget-to-download-the-entire-comedy-bang-bang-archive-to-date.html';
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//ysebastien-me.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                            <li>
+                                <a href="https://twitter.com/underchemist">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/underchemist">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+<p class="copyright text-muted">
+    Blog powered by <a href="http://getpelican.com">Pelican</a>,
+    which takes great advantage of <a href="http://python.org">Python</a>. <br />        &copy;  Yann-Sebastien
+</p>                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="http://ysebastien.me/theme/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="http://ysebastien.me/theme/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="http://ysebastien.me/theme/js/clean-blog.min.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112502837-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-112502837-1');
+</script>
+<script type="text/javascript">
+    var disqus_shortname = 'ysebastien-me';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+
+</html>
