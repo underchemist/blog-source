@@ -20,3 +20,6 @@ DELETE_OUTPUT_DIRECTORY = False
 
 # analytics
 GOOGLE_ANALYTICS = 'UA-112502837-1'
+
+# disqus
+DISQUS_SITENAME = 'ysebastien-me'
